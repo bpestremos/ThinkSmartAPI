@@ -21,6 +21,14 @@ builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer(buil
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureSwaggerGen(setup =>
+{
+    setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "StudentsAPI",
+        Version = "v1"
+    });
+});
 
 var app = builder.Build();
 

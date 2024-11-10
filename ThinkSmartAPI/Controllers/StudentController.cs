@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ThinkSmartAPI.Interfaces;
+using ThinkSmartAPI.Models;
 
 namespace ThinkSmartAPI.Controllers
 {
@@ -16,11 +17,22 @@ namespace ThinkSmartAPI.Controllers
             _studentInterface = studentInterface;
         }
 
-        [Route("GetStudents")]
         [HttpGet]
+        [Route("GetStudents")]
         // GET: StudentController/Details/5
         public ActionResult GetStudents()
         {
+            return Ok(_studentInterface.GetStudents());
+        }
+
+
+
+        [HttpPost]
+        [Route("InsertStudents")]
+        // GET: StudentController/Details/5
+        public ActionResult InsertStudent([FromBody] Students stud)
+        {
+
             return Ok(_studentInterface.GetStudents());
         }
     }
