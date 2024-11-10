@@ -1,13 +1,18 @@
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.EntityFrameworkCore;
 using ThinkSmartAPI;
 using ThinkSmartAPI.Interfaces;
+using ThinkSmartAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+builder.Services.AddTransient<StudentInterface, StudentServices>();
+builder.Services.AddTransient<UsersInterface, UserServices>();
+
 
 builder.Configuration.AddJsonFile("appsettings.json");
 builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ThinkSmart")));

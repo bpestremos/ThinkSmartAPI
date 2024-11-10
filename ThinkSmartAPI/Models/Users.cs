@@ -5,7 +5,7 @@ namespace ThinkSmartAPI.Models
     [Keyless]
     public class Users
     {
-        public int UserID { get; set; }
+        public int UsersID { get; set; }
         public Guid UserCode { get; set; }
         public string? Username { get; set; }
         public string? PasswordHash { get; set; }

@@ -2,8 +2,8 @@
 
 namespace ThinkSmartAPI.Interfaces
 {
-    public interface StudentInterface
+    public interface UsersInterface
     {
-        List<Students> GetStudents();
+        List<Users> GetUsers();
     }
 }

@@ -3,18 +3,18 @@ using ThinkSmartAPI.Models;
 
 namespace ThinkSmartAPI.Services
 {
-    public class StudentServices : StudentInterface
+    public class UserServices : UsersInterface
     {
         private readonly AppDBContext _context;
-        public StudentServices(AppDBContext context)
+        public UserServices(AppDBContext context)
         {
             _context = context;
         }
 
 
-        public List<Students> GetStudents()
+        public List<Users> GetUsers()
         {
-            return _context.Students.ToList();
+            return _context.Users.ToList();
         }
     }
 }

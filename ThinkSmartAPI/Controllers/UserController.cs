@@ -7,21 +7,21 @@ namespace ThinkSmartAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class StudentController : Controller
+    public class UserController : Controller
     {
-        private readonly StudentInterface _studentInterface;
+        private readonly UsersInterface _usersInterface;
 
-        public StudentController(StudentInterface studentInterface)
+        public UserController(UsersInterface usersInterface)
         {
-            _studentInterface = studentInterface;
+            _usersInterface = usersInterface;
         }
 
-        [Route("GetStudents")]
+        [Route("GetUsers")]
         [HttpGet]
         // GET: StudentController/Details/5
-        public ActionResult GetStudents()
+        public ActionResult GetUsers()
         {
-            return Ok(_studentInterface.GetStudents());
+            return Ok(_usersInterface.GetUsers());
         }
     }
 }

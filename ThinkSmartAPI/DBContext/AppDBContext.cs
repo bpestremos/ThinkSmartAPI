@@ -10,7 +10,7 @@ namespace ThinkSmartAPI
 
         { }
 
-        public DbSet<Students> Employees { get; set; }
+        public DbSet<Students> Students { get; set; }
         public DbSet<Users> Users { get; set; }
 
 
